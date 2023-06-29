@@ -1,16 +1,12 @@
 name: Scan Workflow
 
-
-
-
-
-
 on:
-  repository-dispatch:
+  repository_dispatch:
   
 jobs:
+  runs-on: ubuntu-latest
   checkout-repo:
-    runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
       
