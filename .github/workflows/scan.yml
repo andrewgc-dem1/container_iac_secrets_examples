@@ -26,7 +26,7 @@ jobs:
 
   scan_and_check:
     runs-on: ubuntu-latest
-      steps:
+    steps:
       - name: checkout repository
         uses: actions/checkout@v3
 
