@@ -12,8 +12,8 @@ jobs:
 
       - name: Create SBOM
         run: |
-            export VERACODE_API_KEY_ID=$(VERACODE_API_KEY_ID)
-            export VERACODE_API_KEY_SECRET=$(VERACODE_API_KEY_SECRET)
+            export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_KEY_ID }}
+            export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY_SECRET }}
             curl -fsS https://tools.veracode.com/veracode-cli/install | sh
             ./veracode configure
             ./veracode sbom --source https://github.com/veracode/verademo --type repo --format json --output ./sbom.json
@@ -32,8 +32,8 @@ jobs:
 
       - name: Run Scan
         run: |
-            export VERACODE_API_KEY_ID=$(VERACODE_API_KEY_ID)
-            export VERACODE_API_KEY_SECRET=$(VERACODE_API_KEY_SECRET)
+            export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_KEY_ID }}
+            export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY_SECRET }}
             curl -fsS https://tools.veracode.com/veracode-cli/install | sh
             ./veracode configure
             ./veracode scan --source https://github.com/veracode/verademo --type repo --format json --output ./veracode_directory_scan.json
