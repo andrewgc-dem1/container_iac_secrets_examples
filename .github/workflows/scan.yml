@@ -46,7 +46,7 @@ jobs:
 
       - name: Verify policy
         run: |
-            PASS=$(cat veracode_container_scan.json | jq -r '."policy-passed"' )
+            PASS=$(cat veracode_directory_scan.json | jq -r '."policy-passed"' )
             #PASS='passed'
             echo "Passed policy: $PASS"
             if [ $PASS == 'false' ]
