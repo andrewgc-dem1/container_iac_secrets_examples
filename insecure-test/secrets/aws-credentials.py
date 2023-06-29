@@ -1,0 +1,21 @@
+Dummy content
+
+[default]
+
+aws_access_key_id = ASIAU635W7VDHMRPSDTR
+aws_secret_access_key = pD/XNryTQ0D00ZqgqCe0f9kwoDxx00mFsHsTs5c1
+
+key = myAmex123456
+secret=myAmex123456
+
+
+str1 = 4111111111111111
+str2 = 346823285239073
+str3 = 370750517718351
+str4 = 4556229836495866
+str5 = 5019717010103742
+str6 = 76009244561
+str7 = 4111-1111-1111-1111
+str8 = 5610591081018250
+str9 = 30569309025904
+str10 = 6011111111111117

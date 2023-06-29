@@ -1,0 +1,32 @@
+No vulnerabilities found
+
+Misconfigurations
+TITLE                                                             	PROVIDER	ID          	SEVERITY 
+S3 Access block should block public ACL                           	AWS     	AVD-AWS-0086	HIGH    	
+S3 Access block should block public policy                        	AWS     	AVD-AWS-0087	HIGH    	
+Unencrypted S3 bucket.                                            	AWS     	AVD-AWS-0088	HIGH    	
+S3 Bucket does not have logging enabled.                          	AWS     	AVD-AWS-0089	MEDIUM  	
+S3 Access Block should Ignore Public Acl                          	AWS     	AVD-AWS-0091	HIGH    	
+S3 Access block should restrict public bucket to limit access     	AWS     	AVD-AWS-0093	HIGH    	
+S3 buckets should each define an aws_s3_bucket_public_access_block	AWS     	AVD-AWS-0094	LOW     	
+S3 encryption should use Customer Managed Keys                    	AWS     	AVD-AWS-0132	HIGH    	
+
+
+No secrets found
+
+Policy Results
+TYPE  	MESSAGE                                                                          
+Config	Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access    	
+      	Block should Ignore Public Acl                                                  	
+Config	Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access    	
+      	block should block public ACL                                                   	
+Config	Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access    	
+      	block should block public policy                                                	
+Config	Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access    	
+      	block should restrict public bucket to limit access                             	
+Config	Found HIGH issues in infrastructure as code: insecure-example.yml: S3 encryption	
+      	should use Customer Managed Keys                                                	
+Config	Found HIGH issues in infrastructure as code: insecure-example.yml: Unencrypted  	
+      	S3 bucket.                                                                      	
+
+Policy Passed = false

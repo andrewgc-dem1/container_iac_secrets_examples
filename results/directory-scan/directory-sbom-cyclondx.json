@@ -1,0 +1,196 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "serialNumber": "urn:uuid:c4b3f70b-3165-4cd7-931c-e1a96b0bb5cf",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2023-02-17T10:46:19+01:00",
+    "tools": [
+      {
+        "vendor": "anchore",
+        "name": "syft"
+      }
+    ],
+    "component": {
+      "bom-ref": "1d7bb982eab4a264",
+      "type": "file",
+      "name": "insecure-test"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:maven/org.keycloak/keycloak-saml-core@1.8.1.Final?package-id=f17749812f199493",
+      "type": "library",
+      "group": "org.keycloak",
+      "name": "keycloak-saml-core",
+      "version": "1.8.1.Final",
+      "cpe": "cpe:2.3:a:keycloak-saml-core:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*",
+      "purl": "pkg:maven/org.keycloak/keycloak-saml-core@1.8.1.Final",
+      "externalReferences": [
+        {
+          "url": "",
+          "hashes": [
+            {
+              "alg": "SHA-1",
+              "content": "73cebee358d4738326d4540ea496eefa1e5ad05f"
+            }
+          ],
+          "type": "build-meta"
+        }
+      ],
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "java-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "java"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "JavaMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "java-archive"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak-saml-core:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak_saml_core:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak_saml_core:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:jboss-by-red-hat:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:jboss-by-red-hat:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:jboss_by_red_hat:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:jboss_by_red_hat:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak-saml:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak-saml:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak_saml:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak_saml:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak:keycloak-saml-core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:keycloak:keycloak_saml_core:1.8.1.Final:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "lib/keycloak-saml-core-1.8.1.Final.jar"
+        },
+        {
+          "name": "syft:metadata:-:artifactID",
+          "value": "keycloak-saml-core"
+        },
+        {
+          "name": "syft:metadata:-:groupID",
+          "value": "org.keycloak"
+        },
+        {
+          "name": "syft:metadata:virtualPath",
+          "value": "lib/keycloak-saml-core-1.8.1.Final.jar"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/log4j/log4j@1.2.17?package-id=89d512314ebd1938",
+      "type": "library",
+      "group": "log4j",
+      "name": "log4j",
+      "version": "1.2.17",
+      "cpe": "cpe:2.3:a:apache-software-foundation:log4j:1.2.17:*:*:*:*:*:*:*",
+      "purl": "pkg:maven/log4j/log4j@1.2.17",
+      "externalReferences": [
+        {
+          "url": "",
+          "hashes": [
+            {
+              "alg": "SHA-1",
+              "content": "5af35056b4d257e4b64b9e8069c0746e8b08629f"
+            }
+          ],
+          "type": "build-meta"
+        }
+      ],
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "java-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "java"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "JavaMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "java-archive"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:apache_software_foundation:log4j:1.2.17:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:apache:log4j:1.2.17:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:log4j:log4j:1.2.17:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "lib/lib2/log4j-1.2.17.jar"
+        },
+        {
+          "name": "syft:metadata:-:artifactID",
+          "value": "log4j"
+        },
+        {
+          "name": "syft:metadata:-:groupID",
+          "value": "log4j"
+        },
+        {
+          "name": "syft:metadata:virtualPath",
+          "value": "lib/lib2/log4j-1.2.17.jar"
+        }
+      ]
+    }
+  ]
+}

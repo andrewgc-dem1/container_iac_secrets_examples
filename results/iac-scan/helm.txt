@@ -1,0 +1,22 @@
+No vulnerabilities found
+
+Misconfigurations
+TITLE                                                    	PROVIDER  	ID    	SEVERITY 
+Process can elevate its own privileges                   	Kubernetes	KSV001	MEDIUM  	
+Default capabilities not dropped                         	Kubernetes	KSV003	LOW     	
+CPU not limited                                          	Kubernetes	KSV011	LOW     	
+Runs as root user                                        	Kubernetes	KSV012	MEDIUM  	
+Root file system is not read-only                        	Kubernetes	KSV014	LOW     	
+CPU requests not specified                               	Kubernetes	KSV015	LOW     	
+Memory requests not specified                            	Kubernetes	KSV016	LOW     	
+Memory not limited                                       	Kubernetes	KSV018	LOW     	
+Runs with low user ID                                    	Kubernetes	KSV020	LOW     	
+Runs with low group ID                                   	Kubernetes	KSV021	LOW     	
+Default Seccomp profile not set                          	Kubernetes	KSV030	LOW     	
+Container capabilities must only include NET_BIND_SERVICE	Kubernetes	KSV106	LOW     	
+
+
+No secrets found
+
+No Policy evaluation failures found
+Policy Passed = true

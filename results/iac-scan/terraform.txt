@@ -1,0 +1,428 @@
+No vulnerabilities found
+
+Misconfigurations
+TITLE                                                                           	PROVIDER  	ID          	SEVERITY 
+aws_instance should activate session tokens for Instance Metadata Service.      	AWS       	AVD-AWS-0028	HIGH    	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+RDS Cluster and RDS instance should have backup retention longer than default 1 	AWS       	AVD-AWS-0077	MEDIUM  	
+day                                                                             	          	            	        	
+RDS encryption has not been enabled at a DB Instance level.                     	AWS       	AVD-AWS-0080	HIGH    	
+A database resource is marked as publicly accessible.                           	AWS       	AVD-AWS-0082	CRITICAL	
+Missing description for security group.                                         	AWS       	AVD-AWS-0099	LOW     	
+An egress security group rule allows traffic to /0.                             	AWS       	AVD-AWS-0104	CRITICAL	
+Missing description for security group rule.                                    	AWS       	AVD-AWS-0124	LOW     	
+Missing description for security group rule.                                    	AWS       	AVD-AWS-0124	LOW     	
+Instance with unencrypted block device.                                         	AWS       	AVD-AWS-0131	HIGH    	
+Enable Performance Insights to detect potential problems                        	AWS       	AVD-AWS-0133	LOW     	
+RDS IAM Database Authentication Disabled                                        	AWS       	N/A         	MEDIUM  	
+RDS Deletion Protection Disabled                                                	AWS       	N/A         	MEDIUM  	
+EBS volumes must be encrypted                                                   	AWS       	AVD-AWS-0026	HIGH    	
+EBS volume encryption should use Customer Managed Keys                          	AWS       	AVD-AWS-0027	LOW     	
+aws_instance should activate session tokens for Instance Metadata Service.      	AWS       	AVD-AWS-0028	HIGH    	
+User data for EC2 instances must not contain sensitive AWS keys                 	AWS       	AVD-AWS-0029	CRITICAL	
+S3 Access block should block public ACL                                         	AWS       	AVD-AWS-0086	HIGH    	
+S3 Access block should block public policy                                      	AWS       	AVD-AWS-0087	HIGH    	
+Unencrypted S3 bucket.                                                          	AWS       	AVD-AWS-0088	HIGH    	
+S3 Bucket does not have logging enabled.                                        	AWS       	AVD-AWS-0089	MEDIUM  	
+S3 Data should be versioned                                                     	AWS       	AVD-AWS-0090	MEDIUM  	
+S3 Access Block should Ignore Public Acl                                        	AWS       	AVD-AWS-0091	HIGH    	
+S3 Access block should restrict public bucket to limit access                   	AWS       	AVD-AWS-0093	HIGH    	
+S3 buckets should each define an aws_s3_bucket_public_access_block              	AWS       	AVD-AWS-0094	LOW     	
+An egress security group rule allows traffic to /0.                             	AWS       	AVD-AWS-0104	CRITICAL	
+An ingress security group rule allows traffic from /0.                          	AWS       	AVD-AWS-0107	CRITICAL	
+An ingress security group rule allows traffic from /0.                          	AWS       	AVD-AWS-0107	CRITICAL	
+Missing description for security group rule.                                    	AWS       	AVD-AWS-0124	LOW     	
+Missing description for security group rule.                                    	AWS       	AVD-AWS-0124	LOW     	
+Missing description for security group rule.                                    	AWS       	AVD-AWS-0124	LOW     	
+Instance with unencrypted block device.                                         	AWS       	AVD-AWS-0131	HIGH    	
+S3 encryption should use Customer Managed Keys                                  	AWS       	AVD-AWS-0132	HIGH    	
+Instances in a subnet should not receive a public IP address by default.        	AWS       	AVD-AWS-0164	HIGH    	
+Instances in a subnet should not receive a public IP address by default.        	AWS       	AVD-AWS-0164	HIGH    	
+VPC Flow Logs is a feature that enables you to capture information about the IP 	AWS       	AVD-AWS-0178	MEDIUM  	
+traffic going to and from network interfaces in your VPC. After you've created a	          	            	        	
+flow log, you can view and retrieve its data in Amazon CloudWatch Logs. It is   	          	            	        	
+recommended that VPC Flow Logs be enabled for packet "Rejects" for VPCs.        	          	            	        	
+ECR repository has image scans disabled.                                        	AWS       	AVD-AWS-0030	HIGH    	
+ECR images tags shouldn't be mutable.                                           	AWS       	AVD-AWS-0031	HIGH    	
+ECR Repository should use customer managed keys to allow more control           	AWS       	AVD-AWS-0033	LOW     	
+EKS Clusters should have cluster control plane logging turned on                	AWS       	AVD-AWS-0038	MEDIUM  	
+EKS Clusters should have cluster control plane logging turned on                	AWS       	AVD-AWS-0038	MEDIUM  	
+EKS Clusters should have cluster control plane logging turned on                	AWS       	AVD-AWS-0038	MEDIUM  	
+EKS Clusters should have cluster control plane logging turned on                	AWS       	AVD-AWS-0038	MEDIUM  	
+EKS Clusters should have cluster control plane logging turned on                	AWS       	AVD-AWS-0038	MEDIUM  	
+EKS should have the encryption of secrets enabled                               	AWS       	AVD-AWS-0039	HIGH    	
+EKS Clusters should have the public access disabled                             	AWS       	AVD-AWS-0040	CRITICAL	
+EKS cluster should not have open CIDR range for public access                   	AWS       	AVD-AWS-0041	CRITICAL	
+Instances in a subnet should not receive a public IP address by default.        	AWS       	AVD-AWS-0164	HIGH    	
+Instances in a subnet should not receive a public IP address by default.        	AWS       	AVD-AWS-0164	HIGH    	
+VPC Flow Logs is a feature that enables you to capture information about the IP 	AWS       	AVD-AWS-0178	MEDIUM  	
+traffic going to and from network interfaces in your VPC. After you've created a	          	            	        	
+flow log, you can view and retrieve its data in Amazon CloudWatch Logs. It is   	          	            	        	
+recommended that VPC Flow Logs be enabled for packet "Rejects" for VPCs.        	          	            	        	
+Load balancer is exposed to the internet.                                       	AWS       	AVD-AWS-0053	HIGH    	
+Domain logging should be enabled for Elastic Search domains                     	AWS       	AVD-AWS-0042	MEDIUM  	
+Elasticsearch domain uses plaintext traffic for node to node communication.     	AWS       	AVD-AWS-0043	HIGH    	
+Elasticsearch doesn't enforce HTTPS traffic.                                    	AWS       	AVD-AWS-0046	CRITICAL	
+Elasticsearch domain isn't encrypted at rest.                                   	AWS       	AVD-AWS-0048	HIGH    	
+Elasticsearch domain endpoint is using outdated TLS policy.                     	AWS       	AVD-AWS-0126	HIGH    	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policy should avoid use of wildcards and instead apply the principle of     	AWS       	AVD-AWS-0057	HIGH    	
+least privilege                                                                 	          	            	        	
+IAM policies should not be granted directly to users.                           	AWS       	AVD-AWS-0143	LOW     	
+A KMS key is not configured to auto-rotate.                                     	AWS       	AVD-AWS-0065	MEDIUM  	
+Lambda functions should have X-Ray tracing enabled                              	AWS       	AVD-AWS-0066	LOW     	
+Neptune logs export should be enabled                                           	AWS       	AVD-AWS-0075	MEDIUM  	
+Neptune storage must be encrypted at rest                                       	AWS       	AVD-AWS-0076	HIGH    	
+Neptune encryption should use Customer Managed Keys                             	AWS       	AVD-AWS-0128	HIGH    	
+RDS Cluster and RDS instance should have backup retention longer than default 1 	AWS       	AVD-AWS-0077	MEDIUM  	
+day                                                                             	          	            	        	
+RDS Cluster and RDS instance should have backup retention longer than default 1 	AWS       	AVD-AWS-0077	MEDIUM  	
+day                                                                             	          	            	        	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+There is no encryption specified or encryption is disabled on the RDS Cluster.  	AWS       	AVD-AWS-0079	HIGH    	
+Image user should not be 'root'                                                 	Dockerfile	DS002       	HIGH    	
+S3 Access block should block public ACL                                         	AWS       	AVD-AWS-0086	HIGH    	
+S3 Access block should block public ACL                                         	AWS       	AVD-AWS-0086	HIGH    	
+S3 Access block should block public ACL                                         	AWS       	AVD-AWS-0086	HIGH    	
+S3 Access block should block public ACL                                         	AWS       	AVD-AWS-0086	HIGH    	
+S3 Access block should block public ACL                                         	AWS       	AVD-AWS-0086	HIGH    	
+S3 Access block should block public policy                                      	AWS       	AVD-AWS-0087	HIGH    	
+S3 Access block should block public policy                                      	AWS       	AVD-AWS-0087	HIGH    	
+S3 Access block should block public policy                                      	AWS       	AVD-AWS-0087	HIGH    	
+S3 Access block should block public policy                                      	AWS       	AVD-AWS-0087	HIGH    	
+S3 Access block should block public policy                                      	AWS       	AVD-AWS-0087	HIGH    	
+Unencrypted S3 bucket.                                                          	AWS       	AVD-AWS-0088	HIGH    	
+Unencrypted S3 bucket.                                                          	AWS       	AVD-AWS-0088	HIGH    	
+Unencrypted S3 bucket.                                                          	AWS       	AVD-AWS-0088	HIGH    	
+Unencrypted S3 bucket.                                                          	AWS       	AVD-AWS-0088	HIGH    	
+S3 Bucket does not have logging enabled.                                        	AWS       	AVD-AWS-0089	MEDIUM  	
+S3 Bucket does not have logging enabled.                                        	AWS       	AVD-AWS-0089	MEDIUM  	
+S3 Bucket does not have logging enabled.                                        	AWS       	AVD-AWS-0089	MEDIUM  	
+S3 Data should be versioned                                                     	AWS       	AVD-AWS-0090	MEDIUM  	
+S3 Data should be versioned                                                     	AWS       	AVD-AWS-0090	MEDIUM  	
+S3 Access Block should Ignore Public Acl                                        	AWS       	AVD-AWS-0091	HIGH    	
+S3 Access Block should Ignore Public Acl                                        	AWS       	AVD-AWS-0091	HIGH    	
+S3 Access Block should Ignore Public Acl                                        	AWS       	AVD-AWS-0091	HIGH    	
+S3 Access Block should Ignore Public Acl                                        	AWS       	AVD-AWS-0091	HIGH    	
+S3 Access Block should Ignore Public Acl                                        	AWS       	AVD-AWS-0091	HIGH    	
+S3 Access block should restrict public bucket to limit access                   	AWS       	AVD-AWS-0093	HIGH    	
+S3 Access block should restrict public bucket to limit access                   	AWS       	AVD-AWS-0093	HIGH    	
+S3 Access block should restrict public bucket to limit access                   	AWS       	AVD-AWS-0093	HIGH    	
+S3 Access block should restrict public bucket to limit access                   	AWS       	AVD-AWS-0093	HIGH    	
+S3 Access block should restrict public bucket to limit access                   	AWS       	AVD-AWS-0093	HIGH    	
+S3 buckets should each define an aws_s3_bucket_public_access_block              	AWS       	AVD-AWS-0094	LOW     	
+S3 buckets should each define an aws_s3_bucket_public_access_block              	AWS       	AVD-AWS-0094	LOW     	
+S3 buckets should each define an aws_s3_bucket_public_access_block              	AWS       	AVD-AWS-0094	LOW     	
+S3 buckets should each define an aws_s3_bucket_public_access_block              	AWS       	AVD-AWS-0094	LOW     	
+S3 buckets should each define an aws_s3_bucket_public_access_block              	AWS       	AVD-AWS-0094	LOW     	
+S3 encryption should use Customer Managed Keys                                  	AWS       	AVD-AWS-0132	HIGH    	
+S3 encryption should use Customer Managed Keys                                  	AWS       	AVD-AWS-0132	HIGH    	
+S3 encryption should use Customer Managed Keys                                  	AWS       	AVD-AWS-0132	HIGH    	
+S3 encryption should use Customer Managed Keys                                  	AWS       	AVD-AWS-0132	HIGH    	
+Ensure AKS logging to Azure Monitoring is Configured                            	Azure     	AVD-AZU-0040	MEDIUM  	
+Ensure AKS has an API Server Authorized IP Ranges enabled                       	Azure     	AVD-AZU-0041	CRITICAL	
+Ensure RBAC is enabled on AKS clusters                                          	Azure     	AVD-AZU-0042	HIGH    	
+Ensure AKS cluster has Network Policy configured                                	Azure     	AVD-AZU-0043	HIGH    	
+Web App accepts incoming client certificate                                     	Azure     	AVD-AZU-0001	LOW     	
+Web App accepts incoming client certificate                                     	Azure     	AVD-AZU-0001	LOW     	
+Web App has registration with AD enabled                                        	Azure     	AVD-AZU-0002	LOW     	
+Web App has registration with AD enabled                                        	Azure     	AVD-AZU-0002	LOW     	
+App Service authentication is activated                                         	Azure     	AVD-AZU-0003	MEDIUM  	
+App Service authentication is activated                                         	Azure     	AVD-AZU-0003	MEDIUM  	
+Web App uses the latest HTTP version                                            	Azure     	AVD-AZU-0005	LOW     	
+Web App uses the latest HTTP version                                            	Azure     	AVD-AZU-0005	LOW     	
+Web App uses latest TLS version                                                 	Azure     	AVD-AZU-0006	HIGH    	
+Password authentication should be disabled on Azure virtual machines            	Azure     	AVD-AZU-0039	HIGH    	
+Key vault should have the network acl block specified                           	Azure     	AVD-AZU-0013	CRITICAL	
+Ensure that the expiration date is set on all keys                              	Azure     	AVD-AZU-0014	MEDIUM  	
+Key vault Secret should have a content type set                                 	Azure     	AVD-AZU-0015	LOW     	
+Key vault should have purge protection enabled                                  	Azure     	AVD-AZU-0016	MEDIUM  	
+Key Vault Secret should have an expiration date set                             	Azure     	AVD-AZU-0017	LOW     	
+Ensure the activity retention log is set to at least a year                     	Azure     	AVD-AZU-0031	MEDIUM  	
+Ensure activitys are captured for all locations                                 	Azure     	AVD-AZU-0032	MEDIUM  	
+Ensure log profile captures all activities                                      	Azure     	AVD-AZU-0033	MEDIUM  	
+Ensure log profile captures all activities                                      	Azure     	AVD-AZU-0033	MEDIUM  	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure     	AVD-AZU-0011	CRITICAL	
+At least one email address is set for threat alerts                             	Azure     	AVD-AZU-0018	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+An inbound network security rule allows traffic from /0.                        	Azure     	AVD-AZU-0047	CRITICAL	
+An inbound network security rule allows traffic from /0.                        	Azure     	AVD-AZU-0047	CRITICAL	
+RDP access should not be accessible from the Internet, should be blocked on port	Azure     	AVD-AZU-0048	CRITICAL	
+3389                                                                            	          	            	        	
+Retention policy for flow logs should be enabled and set to greater than 90 days	Azure     	AVD-AZU-0049	LOW     	
+SSH access should not be accessible from the Internet, should be blocked on port	Azure     	AVD-AZU-0050	CRITICAL	
+22                                                                              	          	            	        	
+Send notification emails for high severity alerts                               	Azure     	AVD-AZU-0044	MEDIUM  	
+Enable the standard security center subscription tier                           	Azure     	AVD-AZU-0045	LOW     	
+The required contact details should be set for security center                  	Azure     	AVD-AZU-0046	LOW     	
+At least one email address is set for threat alerts                             	Azure     	AVD-AZU-0018	MEDIUM  	
+Ensure server parameter 'log_connections' is set to 'ON' for PostgreSQL Database	Azure     	AVD-AZU-0019	MEDIUM  	
+Server                                                                          	          	            	        	
+SSL should be enforced on database connections where applicable                 	Azure     	AVD-AZU-0020	MEDIUM  	
+SSL should be enforced on database connections where applicable                 	Azure     	AVD-AZU-0020	MEDIUM  	
+Ensure server parameter 'connection_throttling' is set to 'ON' for PostgreSQL   	Azure     	AVD-AZU-0021	MEDIUM  	
+Database Server                                                                 	          	            	        	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Ensure databases are not publicly accessible                                    	Azure     	AVD-AZU-0022	MEDIUM  	
+Security threat alerts go to subcription owners and co-administrators           	Azure     	AVD-AZU-0023	LOW     	
+Ensure server parameter 'log_checkpoints' is set to 'ON' for PostgreSQL Database	Azure     	AVD-AZU-0024	MEDIUM  	
+Server                                                                          	          	            	        	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure     	AVD-AZU-0026	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure     	AVD-AZU-0027	MEDIUM  	
+No threat detections are set                                                    	Azure     	AVD-AZU-0028	MEDIUM  	
+Trusted Microsoft Services should have bypass access to Storage accounts        	Azure     	AVD-AZU-0010	HIGH    	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure     	AVD-AZU-0011	CRITICAL	
+Enable disk encryption on managed disk                                          	Azure     	AVD-AZU-0038	HIGH    	
+Temporary file logging should be enabled for all temporary files.               	Google    	AVD-GCP-0014	MEDIUM  	
+SSL connections to a SQL database instance should be enforced.                  	Google    	AVD-GCP-0015	HIGH    	
+Ensure that logging of connections is enabled.                                  	Google    	AVD-GCP-0016	MEDIUM  	
+Ensure that Cloud SQL Database Instances are not publicly exposed               	Google    	AVD-GCP-0017	HIGH    	
+Ensure that Cloud SQL Database Instances are not publicly exposed               	Google    	AVD-GCP-0017	HIGH    	
+Ensure that logging of lock waits is enabled.                                   	Google    	AVD-GCP-0020	MEDIUM  	
+Ensure that logging of disconnections is enabled.                               	Google    	AVD-GCP-0022	MEDIUM  	
+Enable automated backups to recover from data-loss                              	Google    	AVD-GCP-0024	MEDIUM  	
+Ensure that logging of checkpoints is enabled.                                  	Google    	AVD-GCP-0025	MEDIUM  	
+BigQuery datasets should only be accessible within the organisation             	Google    	AVD-GCP-0046	CRITICAL	
+Ensure that Cloud Storage bucket is not anonymously or publicly accessible.     	Google    	AVD-GCP-0001	HIGH    	
+Ensure that Cloud Storage buckets have uniform bucket-level access enabled      	Google    	AVD-GCP-0002	MEDIUM  	
+Cloud Storage buckets should be encrypted with a customer-managed key.          	Google    	AVD-GCP-0066	LOW     	
+Pod security policy enforcement not defined.                                    	Google    	AVD-GCP-0047	HIGH    	
+Legacy metadata endpoints enabled.                                              	Google    	AVD-GCP-0048	HIGH    	
+Clusters should have IP aliasing enabled                                        	Google    	AVD-GCP-0049	LOW     	
+Checks for service account defined for GKE nodes                                	Google    	AVD-GCP-0050	MEDIUM  	
+Clusters should be configured with Labels                                       	Google    	AVD-GCP-0051	LOW     	
+Stackdriver Monitoring should be enabled                                        	Google    	AVD-GCP-0052	LOW     	
+GKE Control Plane should not be publicly accessible                             	Google    	AVD-GCP-0053	HIGH    	
+Ensure Container-Optimized OS (cos) is used for Kubernetes Engine Clusters Node 	Google    	AVD-GCP-0054	LOW     	
+image                                                                           	          	            	        	
+Ensure Container-Optimized OS (cos) is used for Kubernetes Engine Clusters Node 	Google    	AVD-GCP-0054	LOW     	
+image                                                                           	          	            	        	
+Network Policy should be enabled on GKE clusters                                	Google    	AVD-GCP-0056	MEDIUM  	
+Node metadata value disables metadata concealment.                              	Google    	AVD-GCP-0057	HIGH    	
+Node metadata value disables metadata concealment.                              	Google    	AVD-GCP-0057	HIGH    	
+Kubernetes should have 'Automatic upgrade' enabled                              	Google    	AVD-GCP-0058	LOW     	
+Clusters should be set to private                                               	Google    	AVD-GCP-0059	MEDIUM  	
+Stackdriver Logging should be enabled                                           	Google    	AVD-GCP-0060	LOW     	
+Legacy ABAC permissions are enabled.                                            	Google    	AVD-GCP-0062	HIGH    	
+Kubernetes should have 'Automatic repair' enabled                               	Google    	AVD-GCP-0063	LOW     	
+Disable project-wide SSH keys for all instances                                 	Google    	AVD-GCP-0030	MEDIUM  	
+Instances should not have public IP addresses                                   	Google    	AVD-GCP-0031	HIGH    	
+Disable serial port connectivity for all instances                              	Google    	AVD-GCP-0032	MEDIUM  	
+VM disks should be encrypted with Customer Supplied Encryption Keys             	Google    	AVD-GCP-0033	LOW     	
+Disks should be encrypted with customer managed encryption keys                 	Google    	AVD-GCP-0034	LOW     	
+Instances should not override the project setting for OS Login                  	Google    	AVD-GCP-0036	MEDIUM  	
+Instances should have Shielded VM VTPM enabled                                  	Google    	AVD-GCP-0041	MEDIUM  	
+Instances should not have IP forwarding enabled                                 	Google    	AVD-GCP-0043	HIGH    	
+Instances should have Shielded VM integrity monitoring enabled                  	Google    	AVD-GCP-0045	MEDIUM  	
+An inbound firewall rule allows traffic from /0.                                	Google    	AVD-GCP-0027	CRITICAL	
+VPC flow logs should be enabled for all subnetworks                             	Google    	AVD-GCP-0029	LOW     	
+
+
+Secrets
+FILE            	SECRET TYPE          	SEVERITY 
+aws/ec2.tf      	AWS Access Key ID    	CRITICAL	
+aws/ec2.tf      	AWS Secret Access Key	CRITICAL	
+aws/lambda.tf   	AWS Access Key ID    	CRITICAL	
+aws/lambda.tf   	AWS Secret Access Key	CRITICAL	
+aws/providers.tf	AWS Access Key ID    	CRITICAL	
+aws/providers.tf	AWS Secret Access Key	CRITICAL	
+
+
+Policy Results
+TYPE  	MESSAGE                                                                          
+Config	Found CRITICAL issues in infrastructure as code: aws/db-app.tf: A database      	
+      	resource is marked as publicly accessible.                                      	
+Config	Found CRITICAL issues in infrastructure as code: aws/db-app.tf: An egress       	
+      	security group rule allows traffic to /0.                                       	
+Config	Found CRITICAL issues in infrastructure as code: aws/ec2.tf: An egress security 	
+      	group rule allows traffic to /0.                                                	
+Config	Found CRITICAL issues in infrastructure as code: aws/ec2.tf: An ingress security	
+      	group rule allows traffic from /0.                                              	
+Config	Found CRITICAL issues in infrastructure as code: aws/ec2.tf: User data for EC2  	
+      	instances must not contain sensitive AWS keys                                   	
+Config	Found CRITICAL issues in infrastructure as code: aws/eks.tf: EKS Clusters should	
+      	have the public access disabled                                                 	
+Config	Found CRITICAL issues in infrastructure as code: aws/eks.tf: EKS cluster should 	
+      	not have open CIDR range for public access                                      	
+Config	Found CRITICAL issues in infrastructure as code: aws/es.tf: Elasticsearch       	
+      	doesn't enforce HTTPS traffic.                                                  	
+Config	Found CRITICAL issues in infrastructure as code: azure/aks.tf: Ensure AKS has an	
+      	API Server Authorized IP Ranges enabled                                         	
+Config	Found CRITICAL issues in infrastructure as code: azure/key_vault.tf: Key vault  	
+      	should have the network acl block specified                                     	
+Config	Found CRITICAL issues in infrastructure as code: azure/mssql.tf: The minimum TLS	
+      	version for Storage Accounts should be TLS1_2                                   	
+Config	Found CRITICAL issues in infrastructure as code: azure/networking.tf: An inbound	
+      	network security rule allows traffic from /0.                                   	
+Config	Found CRITICAL issues in infrastructure as code: azure/networking.tf: RDP access	
+      	should not be accessible from the Internet, should be blocked on port 3389      	
+Config	Found CRITICAL issues in infrastructure as code: azure/networking.tf: SSH access	
+      	should not be accessible from the Internet, should be blocked on port 22        	
+Config	Found CRITICAL issues in infrastructure as code: azure/storage.tf: The minimum  	
+      	TLS version for Storage Accounts should be TLS1_2                               	
+Config	Found CRITICAL issues in infrastructure as code: gcp/big_data.tf: BigQuery      	
+      	datasets should only be accessible within the organisation                      	
+Config	Found CRITICAL issues in infrastructure as code: gcp/networks.tf: An inbound    	
+      	firewall rule allows traffic from /0.                                           	
+Config	Found HIGH issues in infrastructure as code: aws/db-app.tf: IAM policy should   	
+      	avoid use of wildcards and instead apply the principle of least privilege       	
+Config	Found HIGH issues in infrastructure as code: aws/db-app.tf: Instance with       	
+      	unencrypted block device.                                                       	
+Config	Found HIGH issues in infrastructure as code: aws/db-app.tf: RDS encryption has  	
+      	not been enabled at a DB Instance level.                                        	
+Config	Found HIGH issues in infrastructure as code: aws/db-app.tf: aws_instance should 	
+      	activate session tokens for Instance Metadata Service.                          	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: EBS volumes must be    	
+      	encrypted                                                                       	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: Instance with          	
+      	unencrypted block device.                                                       	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: Instances in a subnet  	
+      	should not receive a public IP address by default.                              	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: S3 Access Block should 	
+      	Ignore Public Acl                                                               	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: S3 Access block should 	
+      	block public ACL                                                                	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: S3 Access block should 	
+      	block public policy                                                             	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: S3 Access block should 	
+      	restrict public bucket to limit access                                          	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: S3 encryption should   	
+      	use Customer Managed Keys                                                       	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: Unencrypted S3 bucket. 	
+Config	Found HIGH issues in infrastructure as code: aws/ec2.tf: aws_instance should    	
+      	activate session tokens for Instance Metadata Service.                          	
+Config	Found HIGH issues in infrastructure as code: aws/ecr.tf: ECR images tags        	
+      	shouldn't be mutable.                                                           	
+Config	Found HIGH issues in infrastructure as code: aws/ecr.tf: ECR repository has     	
+      	image scans disabled.                                                           	
+Config	Found HIGH issues in infrastructure as code: aws/eks.tf: EKS should have the    	
+      	encryption of secrets enabled                                                   	
+Config	Found HIGH issues in infrastructure as code: aws/eks.tf: Instances in a subnet  	
+      	should not receive a public IP address by default.                              	
+Config	Found HIGH issues in infrastructure as code: aws/elb.tf: Load balancer is       	
+      	exposed to the internet.                                                        	
+Config	Found HIGH issues in infrastructure as code: aws/es.tf: Elasticsearch domain    	
+      	endpoint is using outdated TLS policy.                                          	
+Config	Found HIGH issues in infrastructure as code: aws/es.tf: Elasticsearch domain    	
+      	isn't encrypted at rest.                                                        	
+Config	Found HIGH issues in infrastructure as code: aws/es.tf: Elasticsearch domain    	
+      	uses plaintext traffic for node to node communication.                          	
+Config	Found HIGH issues in infrastructure as code: aws/iam.tf: IAM policy should avoid	
+      	use of wildcards and instead apply the principle of least privilege             	
+Config	Found HIGH issues in infrastructure as code: aws/neptune.tf: Neptune encryption 	
+      	should use Customer Managed Keys                                                	
+Config	Found HIGH issues in infrastructure as code: aws/neptune.tf: Neptune storage    	
+      	must be encrypted at rest                                                       	
+Config	Found HIGH issues in infrastructure as code: aws/rds.tf: There is no encryption 	
+      	specified or encryption is disabled on the RDS Cluster.                         	
+Config	Found HIGH issues in infrastructure as code: aws/resources/Dockerfile: Image    	
+      	user should not be 'root'                                                       	
+Config	Found HIGH issues in infrastructure as code: aws/s3.tf: S3 Access Block should  	
+      	Ignore Public Acl                                                               	
+Config	Found HIGH issues in infrastructure as code: aws/s3.tf: S3 Access block should  	
+      	block public ACL                                                                	
+Config	Found HIGH issues in infrastructure as code: aws/s3.tf: S3 Access block should  	
+      	block public policy                                                             	
+Config	Found HIGH issues in infrastructure as code: aws/s3.tf: S3 Access block should  	
+      	restrict public bucket to limit access                                          	
+Config	Found HIGH issues in infrastructure as code: aws/s3.tf: S3 encryption should use	
+      	Customer Managed Keys                                                           	
+Config	Found HIGH issues in infrastructure as code: aws/s3.tf: Unencrypted S3 bucket.  	
+Config	Found HIGH issues in infrastructure as code: azure/aks.tf: Ensure AKS cluster   	
+      	has Network Policy configured                                                   	
+Config	Found HIGH issues in infrastructure as code: azure/aks.tf: Ensure RBAC is       	
+      	enabled on AKS clusters                                                         	
+Config	Found HIGH issues in infrastructure as code: azure/app_service.tf: Web App uses 	
+      	latest TLS version                                                              	
+Config	Found HIGH issues in infrastructure as code: azure/instance.tf: Password        	
+      	authentication should be disabled on Azure virtual machines                     	
+Config	Found HIGH issues in infrastructure as code: azure/storage.tf: Enable disk      	
+      	encryption on managed disk                                                      	
+Config	Found HIGH issues in infrastructure as code: azure/storage.tf: Trusted Microsoft	
+      	Services should have bypass access to Storage accounts                          	
+Config	Found HIGH issues in infrastructure as code: gcp/big_data.tf: Ensure that Cloud 	
+      	SQL Database Instances are not publicly exposed                                 	
+Config	Found HIGH issues in infrastructure as code: gcp/big_data.tf: SSL connections to	
+      	a SQL database instance should be enforced.                                     	
+Config	Found HIGH issues in infrastructure as code: gcp/gcs.tf: Ensure that Cloud      	
+      	Storage bucket is not anonymously or publicly accessible.                       	
+Config	Found HIGH issues in infrastructure as code: gcp/gke.tf: GKE Control Plane      	
+      	should not be publicly accessible                                               	
+Config	Found HIGH issues in infrastructure as code: gcp/gke.tf: Legacy ABAC permissions	
+      	are enabled.                                                                    	
+Config	Found HIGH issues in infrastructure as code: gcp/gke.tf: Legacy metadata        	
+      	endpoints enabled.                                                              	
+Config	Found HIGH issues in infrastructure as code: gcp/gke.tf: Node metadata value    	
+      	disables metadata concealment.                                                  	
+Config	Found HIGH issues in infrastructure as code: gcp/gke.tf: Pod security policy    	
+      	enforcement not defined.                                                        	
+Config	Found HIGH issues in infrastructure as code: gcp/instances.tf: Instances should 	
+      	not have IP forwarding enabled                                                  	
+Config	Found HIGH issues in infrastructure as code: gcp/instances.tf: Instances should 	
+      	not have public IP addresses                                                    	
+Secret	Found CRITICAL secret: aws/ec2.tf: AWS Access Key ID                            	
+Secret	Found CRITICAL secret: aws/ec2.tf: AWS Secret Access Key                        	
+Secret	Found CRITICAL secret: aws/lambda.tf: AWS Access Key ID                         	
+Secret	Found CRITICAL secret: aws/lambda.tf: AWS Secret Access Key                     	
+Secret	Found CRITICAL secret: aws/providers.tf: AWS Access Key ID                      	
+Secret	Found CRITICAL secret: aws/providers.tf: AWS Secret Access Key                  	
+
+Policy Passed = false

@@ -1,0 +1,3804 @@
+{
+  "vulnerabilities": {
+    "descriptor": {
+      "configuration": "",
+      "db": {
+        "built": "2023-06-29T01:34:06Z",
+        "checksum": "sha256:a70a066cbe03743a09df8245fb7613133efb233e1bc3d8aae9f9b4cb6078a70a",
+        "error": null,
+        "location": "/var/folders/2v/z_0jd7gn30qcym54rz_z2__m0000gq/T/veracode_cli_cache/5",
+        "schemaVersion": 5
+      },
+      "name": "grype",
+      "version": "[not provided]"
+    },
+    "distro": {
+      "idLike": null,
+      "name": "",
+      "version": ""
+    },
+    "matches": [],
+    "source": {
+      "target": "./insecure-test/iac/arm",
+      "type": "directory"
+    }
+  },
+  "secrets": {
+    "ArtifactName": "insecure-test/iac/arm",
+    "ArtifactType": "filesystem",
+    "Metadata": {
+      "ImageConfig": {
+        "architecture": "",
+        "config": {},
+        "created": "0001-01-01T00:00:00Z",
+        "os": "",
+        "rootfs": {
+          "diff_ids": null,
+          "type": ""
+        }
+      }
+    },
+    "SchemaVersion": 2
+  },
+  "configs": {
+    "ArtifactName": "insecure-test/iac/arm",
+    "ArtifactType": "filesystem",
+    "Metadata": {
+      "ImageConfig": {
+        "architecture": "",
+        "config": {},
+        "created": "0001-01-01T00:00:00Z",
+        "os": "",
+        "rootfs": {
+          "diff_ids": null,
+          "type": ""
+        }
+      }
+    },
+    "Results": [
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 5,
+          "Successes": 2
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0013",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 101,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2018-02-14\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 102,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[parameters('keyVaultName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 103,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"location\": \"[resourceGroup().location]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 104,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.KeyVault/vaults\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 105,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 106,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"enabledForDeployment\": \"[parameters('enabledForDeployment')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 107,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 108,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 123,
+              "Provider": "Azure",
+              "Service": "keyvault",
+              "StartLine": 101
+            },
+            "Description": "Network ACLs allow you to reduce your exposure to risk by limiting what can access your key vault. \n\nThe default action of the Network ACL should be set to deny for when IPs are not matched. Azure services can be allowed to bypass.",
+            "ID": "AVD-AZU-0013",
+            "Layer": {},
+            "Message": "Vault network ACL does not block access by default.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0013",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/key-vault/general/network-security",
+              "https://avd.aquasec.com/misconfig/avd-azu-0013"
+            ],
+            "Resolution": "Set a network ACL for the key vault",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "Key vault should have the network acl block specified",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0014",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 140,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.KeyVault/vaults/keys\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 141,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2021-06-01-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 142,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[concat(parameters('keyVaultName'), '/', parameters('keyName'))]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 143,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"dependsOn\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 144,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 145,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            ],",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 146,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 147,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 160,
+              "Provider": "Azure",
+              "Service": "keyvault",
+              "StartLine": 140
+            },
+            "Description": "Expiration Date is an optional Key Vault Key behavior and is not set by default.\n\nSet when the resource will be become inactive.",
+            "ID": "AVD-AZU-0014",
+            "Layer": {},
+            "Message": "Key should have an expiry date specified.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0014",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/powershell/module/az.keyvault/update-azkeyvaultkey?view=azps-5.8.0#example-1--modify-a-key-to-enable-it--and-set-the-expiration-date-and-tags",
+              "https://avd.aquasec.com/misconfig/avd-azu-0014"
+            ],
+            "Resolution": "Set an expiration date on the vault key",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "Ensure that the expiration date is set on all keys",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0015",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 124,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.KeyVault/vaults/secrets\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 125,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2019-09-01\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 126,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[concat(parameters('keyVaultName'), '/', parameters('secretName'))]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 127,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"location\": \"[resourceGroup().location]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 128,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"dependsOn\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 129,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "              \"[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 130,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 131,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 139,
+              "Provider": "Azure",
+              "Service": "keyvault",
+              "StartLine": 124
+            },
+            "Description": "Content Type is an optional Key Vault Secret behavior and is not enabled by default.\n\nClients may specify the content type of a secret to assist in interpreting the secret data when it's retrieved. The maximum length of this field is 255 characters. There are no pre-defined values. The suggested usage is as a hint for interpreting the secret data.",
+            "ID": "AVD-AZU-0015",
+            "Layer": {},
+            "Message": "Secret does not have a content-type specified.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0015",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets",
+              "https://avd.aquasec.com/misconfig/avd-azu-0015"
+            ],
+            "Resolution": "Provide content type for secrets to aid interpretation on retrieval",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Key vault Secret should have a content type set",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0016",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 101,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2018-02-14\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 102,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[parameters('keyVaultName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 103,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"location\": \"[resourceGroup().location]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 104,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.KeyVault/vaults\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 105,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 106,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"enabledForDeployment\": \"[parameters('enabledForDeployment')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 107,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 108,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 123,
+              "Provider": "Azure",
+              "Service": "keyvault",
+              "StartLine": 101
+            },
+            "Description": "Purge protection is an optional Key Vault behavior and is not enabled by default.\n\nPurge protection can only be enabled once soft-delete is enabled. It can be turned on via CLI or PowerShell.",
+            "ID": "AVD-AZU-0016",
+            "Layer": {},
+            "Message": "Vault does not have purge protection enabled.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0016",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection",
+              "https://avd.aquasec.com/misconfig/avd-azu-0016"
+            ],
+            "Resolution": "Enable purge protection for key vaults",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "Key vault should have purge protection enabled",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0017",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 124,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.KeyVault/vaults/secrets\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 125,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2019-09-01\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 126,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[concat(parameters('keyVaultName'), '/', parameters('secretName'))]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 127,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"location\": \"[resourceGroup().location]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 128,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"dependsOn\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 129,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "              \"[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 130,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 131,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 139,
+              "Provider": "Azure",
+              "Service": "keyvault",
+              "StartLine": 124
+            },
+            "Description": "Expiration Date is an optional Key Vault Secret behavior and is not set by default.\n\nSet when the resource will be become inactive.",
+            "ID": "AVD-AZU-0017",
+            "Layer": {},
+            "Message": "Secret should have an expiry date specified.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0017",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets",
+              "https://avd.aquasec.com/misconfig/avd-azu-0017"
+            ],
+            "Resolution": "Set an expiry for secrets",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Key Vault Secret should have an expiration date set",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "KeyVault/Keyvault.azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "KeyVault/Keyvault.azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "SQL/SQL-DB/sqldb.azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "SQL/SQL-DB/sqldb.azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "SQL/SQL-Instance/sqlinstance.azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 7,
+          "Successes": 3
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0008",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"supportsHttpsTrafficOnly\": false,",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 79,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 307,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "}",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 308,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 79,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 79
+            },
+            "Description": "You can configure your storage account to accept requests from secure connections only by setting the Secure transfer required property for the storage account. \n\nWhen you require secure transfer, any requests originating from an insecure connection are rejected. \n\nMicrosoft recommends that you always require secure transfer for all of your storage accounts.",
+            "ID": "AVD-AZU-0008",
+            "Layer": {},
+            "Message": "Account does not enforce HTTPS.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0008",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+              "https://avd.aquasec.com/misconfig/avd-azu-0008"
+            ],
+            "Resolution": "Only allow secure connection for transferring data into storage accounts",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Storage accounts should be configured to only accept transfers that are over secure connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0011",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 78,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"supportsHttpsTrafficOnly\": false,",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 79,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"encryption\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 80,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"services\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 81,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        \"file\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 82,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"keyType\": \"Account\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 83,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"enabled\": false",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 84,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 85,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 93,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 78
+            },
+            "Description": "Azure Storage currently supports three versions of the TLS protocol: 1.0, 1.1, and 1.2. \n\nAzure Storage uses TLS 1.2 on public HTTPS endpoints, but TLS 1.0 and TLS 1.1 are still supported for backward compatibility.\n\nThis check will warn if the minimum TLS is not set to TLS1_2.",
+            "ID": "AVD-AZU-0011",
+            "Layer": {},
+            "Message": "Storage account uses an insecure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0011",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+              "https://avd.aquasec.com/misconfig/avd-azu-0011"
+            ],
+            "Resolution": "Use a more recent TLS/SSL policy for the load balancer",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "The minimum TLS version for Storage Accounts should be TLS1_2",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0018",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 207,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.Sql/servers/securityAlertPolicies\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 208,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2020-02-02-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 209,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[concat(parameters('serverName'), '/Default')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 210,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"dependsOn\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 211,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"[resourceId('Microsoft.Sql/servers', parameters('serverName'))]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 212,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            ],",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 213,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 214,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 218,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 207
+            },
+            "Description": "SQL Server sends alerts for threat detection via email, if there are no email addresses set then mitigation will be delayed.",
+            "ID": "AVD-AZU-0018",
+            "Layer": {},
+            "Message": "Security alert policy does not include any email addresses for notification.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0018",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0018"
+            ],
+            "Resolution": "Provide at least one email address for threat alerts",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "At least one email address is set for threat alerts",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0023",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 207,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.Sql/servers/securityAlertPolicies\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 208,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2020-02-02-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 209,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[concat(parameters('serverName'), '/Default')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 210,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"dependsOn\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 211,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"[resourceId('Microsoft.Sql/servers', parameters('serverName'))]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 212,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            ],",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 213,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 214,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 218,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 207
+            },
+            "Description": "Subscription owners should be notified when there are security alerts. By ensuring the administrators of the account have been notified they can quickly assist in any required remediation",
+            "ID": "AVD-AZU-0023",
+            "Layer": {},
+            "Message": "Security alert policy does not alert account admins.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0023",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0023"
+            ],
+            "Resolution": "Enable email to subscription owners",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Security threat alerts go to subcription owners and co-administrators",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0026",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 114,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.Sql/servers\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 115,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2015-05-01-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 116,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[parameters('serverName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 117,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"location\": \"[parameters('location')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 118,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 119,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"administratorLogin\": \"[parameters('administratorLogin')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 120,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 121,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 206,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 114
+            },
+            "Description": "You should not use outdated/insecure TLS versions for encryption. You should be using TLS v1.2+.",
+            "ID": "AVD-AZU-0026",
+            "Layer": {},
+            "Message": "Database server does not require a secure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0026",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0026"
+            ],
+            "Resolution": "Use the most modern TLS policies available",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "Databases should have the minimum TLS set for connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0027",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 114,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"type\": \"Microsoft.Sql/servers\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 115,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"apiVersion\": \"2015-05-01-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 116,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"[parameters('serverName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 117,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"location\": \"[parameters('location')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 118,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 119,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"administratorLogin\": \"[parameters('administratorLogin')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 120,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 121,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 206,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 114
+            },
+            "Description": "Auditing helps you maintain regulatory compliance, understand database activity, and gain insight into discrepancies and anomalies that could indicate business concerns or suspected security violations.",
+            "ID": "AVD-AZU-0027",
+            "Layer": {},
+            "Message": "Server does not have an extended audit policy configured.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0027",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/azure-sql/database/auditing-overview",
+              "https://avd.aquasec.com/misconfig/avd-azu-0027"
+            ],
+            "Resolution": "Enable auditing on Azure SQL databases",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "Auditing should be enabled on Azure SQL Databases",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0028",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"disabledAlerts\": [\"Access_Anomaly\"]",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 216,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 307,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "}",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 308,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 216,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 216
+            },
+            "Description": "SQL Server can alert for security issues including SQL Injection, vulnerabilities, access anomalies and data exfiltration. Ensure none of these are disabled to benefit from the best protection",
+            "ID": "AVD-AZU-0028",
+            "Layer": {},
+            "Message": "Server has a security alert policy which disables alerts.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0028",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0028"
+            ],
+            "Resolution": "Use all provided threat alerts",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "No threat detections are set",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "SQL/SQL-Server/sql.azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "SQL/SQL-Server/sql.azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 2,
+          "Successes": 3
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0026",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 60,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"name\": \"[parameters('sqlServerName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 61,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"type\": \"Microsoft.Sql/servers\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 62,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"apiVersion\": \"2020-02-02-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 63,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"location\": \"[parameters('location')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 64,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"identity\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 65,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"type\": \"SystemAssigned\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 66,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 67,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 73,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 60
+            },
+            "Description": "You should not use outdated/insecure TLS versions for encryption. You should be using TLS v1.2+.",
+            "ID": "AVD-AZU-0026",
+            "Layer": {},
+            "Message": "Database server does not require a secure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0026",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0026"
+            ],
+            "Resolution": "Use the most modern TLS policies available",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "Databases should have the minimum TLS set for connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0027",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 60,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"name\": \"[parameters('sqlServerName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 61,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"type\": \"Microsoft.Sql/servers\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 62,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"apiVersion\": \"2020-02-02-preview\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 63,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"location\": \"[parameters('location')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 64,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      \"identity\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 65,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"type\": \"SystemAssigned\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 66,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 67,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 73,
+              "Provider": "Azure",
+              "Service": "database",
+              "StartLine": 60
+            },
+            "Description": "Auditing helps you maintain regulatory compliance, understand database activity, and gain insight into discrepancies and anomalies that could indicate business concerns or suspected security violations.",
+            "ID": "AVD-AZU-0027",
+            "Layer": {},
+            "Message": "Server does not have an extended audit policy configured.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0027",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/azure-sql/database/auditing-overview",
+              "https://avd.aquasec.com/misconfig/avd-azu-0027"
+            ],
+            "Resolution": "Enable auditing on Azure SQL databases",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "Auditing should be enabled on Azure SQL Databases",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "SQL/sql-encryption-protector-byok/azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "SQL/sql-encryption-protector-byok/azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 2,
+          "Successes": 2
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0008",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 263,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "              \"encryption\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 264,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"keySource\":\"Microsoft.Storage\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 265,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"services\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 266,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                  \"blob\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 267,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"enabled\":true",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 268,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                  }",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 269,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 270,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 272,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 263
+            },
+            "Description": "You can configure your storage account to accept requests from secure connections only by setting the Secure transfer required property for the storage account. \n\nWhen you require secure transfer, any requests originating from an insecure connection are rejected. \n\nMicrosoft recommends that you always require secure transfer for all of your storage accounts.",
+            "ID": "AVD-AZU-0008",
+            "Layer": {},
+            "Message": "Account does not enforce HTTPS.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0008",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+              "https://avd.aquasec.com/misconfig/avd-azu-0008"
+            ],
+            "Resolution": "Only allow secure connection for transferring data into storage accounts",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Storage accounts should be configured to only accept transfers that are over secure connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0011",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 263,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "              \"encryption\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 264,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"keySource\":\"Microsoft.Storage\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 265,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"services\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 266,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                  \"blob\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 267,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"enabled\":true",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 268,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                  }",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 269,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 270,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 272,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 263
+            },
+            "Description": "Azure Storage currently supports three versions of the TLS protocol: 1.0, 1.1, and 1.2. \n\nAzure Storage uses TLS 1.2 on public HTTPS endpoints, but TLS 1.0 and TLS 1.1 are still supported for backward compatibility.\n\nThis check will warn if the minimum TLS is not set to TLS1_2.",
+            "ID": "AVD-AZU-0011",
+            "Layer": {},
+            "Message": "Storage account uses an insecure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0011",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+              "https://avd.aquasec.com/misconfig/avd-azu-0011"
+            ],
+            "Resolution": "Use a more recent TLS/SSL policy for the load balancer",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "The minimum TLS version for Storage Accounts should be TLS1_2",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "ad-application-workloads/azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "ad-application-workloads/azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "arm-template.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 1,
+          "Successes": 2
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0038",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 59,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"type\": \"Microsoft.Compute/disks\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 60,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"apiVersion\": \"2020-09-30\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 61,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"name\": \"[parameters('managedDiskName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 62,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"location\": \"[parameters('location')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 63,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"sku\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 64,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"name\": \"UltraSSD_LRS\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 65,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 66,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 76,
+              "Provider": "Azure",
+              "Service": "compute",
+              "StartLine": 59
+            },
+            "Description": "Manage disks should be encrypted at rest. When specifying the \u003ccode\u003eencryption_settings\u003c/code\u003e block, the enabled attribute should be set to \u003ccode\u003etrue\u003c/code\u003e.",
+            "ID": "AVD-AZU-0038",
+            "Layer": {},
+            "Message": "Managed disk is not encrypted.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0038",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption",
+              "https://avd.aquasec.com/misconfig/avd-azu-0038"
+            ],
+            "Resolution": "Enable encryption on managed disks",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Enable disk encryption on managed disk",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "disks/azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 3,
+          "Successes": 2
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0008",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 79,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        }",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 80,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 120,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "  }",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 121,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 80,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 79
+            },
+            "Description": "You can configure your storage account to accept requests from secure connections only by setting the Secure transfer required property for the storage account. \n\nWhen you require secure transfer, any requests originating from an insecure connection are rejected. \n\nMicrosoft recommends that you always require secure transfer for all of your storage accounts.",
+            "ID": "AVD-AZU-0008",
+            "Layer": {},
+            "Message": "Account does not enforce HTTPS.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0008",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+              "https://avd.aquasec.com/misconfig/avd-azu-0008"
+            ],
+            "Resolution": "Only allow secure connection for transferring data into storage accounts",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Storage accounts should be configured to only accept transfers that are over secure connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0011",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 79,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        }",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 80,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 120,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "  }",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 121,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 80,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 79
+            },
+            "Description": "Azure Storage currently supports three versions of the TLS protocol: 1.0, 1.1, and 1.2. \n\nAzure Storage uses TLS 1.2 on public HTTPS endpoints, but TLS 1.0 and TLS 1.1 are still supported for backward compatibility.\n\nThis check will warn if the minimum TLS is not set to TLS1_2.",
+            "ID": "AVD-AZU-0011",
+            "Layer": {},
+            "Message": "Storage account uses an insecure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0011",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+              "https://avd.aquasec.com/misconfig/avd-azu-0011"
+            ],
+            "Resolution": "Use a more recent TLS/SSL policy for the load balancer",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "The minimum TLS version for Storage Accounts should be TLS1_2",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0049",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 82,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"type\": \"Microsoft.Network/networkWatchers/flowLogs\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 83,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"apiVersion\": \"2020-06-01\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 84,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"name\": \"[concat(parameters('NetworkWatcherName'), '/', parameters('FlowLogName'))]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 85,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"location\": \"[parameters('location')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 86,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        \"properties\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 87,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          \"targetResourceId\": \"[parameters('existingNSG')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 88,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 89,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 109,
+              "Provider": "Azure",
+              "Service": "network",
+              "StartLine": 82
+            },
+            "Description": "Flow logs are the source of truth for all network activity in your cloud environment. \nTo enable analysis in security event that was detected late, you need to have the logs available. \n\t\t\t\nSetting an retention policy will help ensure as much information is available for review.",
+            "ID": "AVD-AZU-0049",
+            "Layer": {},
+            "Message": "Flow log has a log retention policy of less than 90 days.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0049",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview",
+              "https://avd.aquasec.com/misconfig/avd-azu-0049"
+            ],
+            "Resolution": "Ensure flow log retention is turned on with an expiry of \u003e90 days",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Retention policy for flow logs should be enabled and set to greater than 90 days",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "networkwatcher/nw.azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "networkwatcher/nw.azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "storage/StorageA/blob.azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 6,
+          "Successes": 2
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0008",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"supportsHttpsTrafficOnly\": false,",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 86,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 220,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "}",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 221,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 86,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 86
+            },
+            "Description": "You can configure your storage account to accept requests from secure connections only by setting the Secure transfer required property for the storage account. \n\nWhen you require secure transfer, any requests originating from an insecure connection are rejected. \n\nMicrosoft recommends that you always require secure transfer for all of your storage accounts.",
+            "ID": "AVD-AZU-0008",
+            "Layer": {},
+            "Message": "Account does not enforce HTTPS.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0008",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+              "https://avd.aquasec.com/misconfig/avd-azu-0008"
+            ],
+            "Resolution": "Only allow secure connection for transferring data into storage accounts",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Storage accounts should be configured to only accept transfers that are over secure connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0008",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"supportsHttpsTrafficOnly\": false,",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 169,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 220,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "}",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 221,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 169,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 169
+            },
+            "Description": "You can configure your storage account to accept requests from secure connections only by setting the Secure transfer required property for the storage account. \n\nWhen you require secure transfer, any requests originating from an insecure connection are rejected. \n\nMicrosoft recommends that you always require secure transfer for all of your storage accounts.",
+            "ID": "AVD-AZU-0008",
+            "Layer": {},
+            "Message": "Account does not enforce HTTPS.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0008",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+              "https://avd.aquasec.com/misconfig/avd-azu-0008"
+            ],
+            "Resolution": "Only allow secure connection for transferring data into storage accounts",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Storage accounts should be configured to only accept transfers that are over secure connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0008",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"supportsHttpsTrafficOnly\": false,",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 203,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 220,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "}",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 221,
+                    "Truncated": false
+                  }
+                ]
+              },
+              "EndLine": 203,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 203
+            },
+            "Description": "You can configure your storage account to accept requests from secure connections only by setting the Secure transfer required property for the storage account. \n\nWhen you require secure transfer, any requests originating from an insecure connection are rejected. \n\nMicrosoft recommends that you always require secure transfer for all of your storage accounts.",
+            "ID": "AVD-AZU-0008",
+            "Layer": {},
+            "Message": "Account does not enforce HTTPS.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0008",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer",
+              "https://avd.aquasec.com/misconfig/avd-azu-0008"
+            ],
+            "Resolution": "Only allow secure connection for transferring data into storage accounts",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Storage accounts should be configured to only accept transfers that are over secure connections",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0011",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 71,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"networkAcls\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 72,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"bypass\": \"None\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 73,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"virtualNetworkRules\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 74,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 75,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"id\": \"[variables('containerSubnetRef')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 76,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"action\": \"Allow\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 77,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 78,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 101,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 71
+            },
+            "Description": "Azure Storage currently supports three versions of the TLS protocol: 1.0, 1.1, and 1.2. \n\nAzure Storage uses TLS 1.2 on public HTTPS endpoints, but TLS 1.0 and TLS 1.1 are still supported for backward compatibility.\n\nThis check will warn if the minimum TLS is not set to TLS1_2.",
+            "ID": "AVD-AZU-0011",
+            "Layer": {},
+            "Message": "Storage account uses an insecure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0011",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+              "https://avd.aquasec.com/misconfig/avd-azu-0011"
+            ],
+            "Resolution": "Use a more recent TLS/SSL policy for the load balancer",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "The minimum TLS version for Storage Accounts should be TLS1_2",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0011",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 154,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"networkAcls\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 155,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"bypass\": \"None\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 156,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"virtualNetworkRules\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 157,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 158,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"id\": \"[variables('containerSubnetRef')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 159,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"action\": \"Allow\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 160,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 161,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 184,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 154
+            },
+            "Description": "Azure Storage currently supports three versions of the TLS protocol: 1.0, 1.1, and 1.2. \n\nAzure Storage uses TLS 1.2 on public HTTPS endpoints, but TLS 1.0 and TLS 1.1 are still supported for backward compatibility.\n\nThis check will warn if the minimum TLS is not set to TLS1_2.",
+            "ID": "AVD-AZU-0011",
+            "Layer": {},
+            "Message": "Storage account uses an insecure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0011",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+              "https://avd.aquasec.com/misconfig/avd-azu-0011"
+            ],
+            "Resolution": "Use a more recent TLS/SSL policy for the load balancer",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "The minimum TLS version for Storage Accounts should be TLS1_2",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0011",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 195,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"networkAcls\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 196,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"bypass\": \"None\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 197,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"virtualNetworkRules\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 198,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "  ",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 199,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    ],",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 200,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"defaultAction\": \"Allow\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 201,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 202,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 218,
+              "Provider": "Azure",
+              "Service": "storage",
+              "StartLine": 195
+            },
+            "Description": "Azure Storage currently supports three versions of the TLS protocol: 1.0, 1.1, and 1.2. \n\nAzure Storage uses TLS 1.2 on public HTTPS endpoints, but TLS 1.0 and TLS 1.1 are still supported for backward compatibility.\n\nThis check will warn if the minimum TLS is not set to TLS1_2.",
+            "ID": "AVD-AZU-0011",
+            "Layer": {},
+            "Message": "Storage account uses an insecure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0011",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+              "https://avd.aquasec.com/misconfig/avd-azu-0011"
+            ],
+            "Resolution": "Use a more recent TLS/SSL policy for the load balancer",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "The minimum TLS version for Storage Accounts should be TLS1_2",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "storage/StorageB/deploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "storage/StorageB/parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "storage/StorageC/storage.azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 6,
+          "Successes": 2
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AZU-0001",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 42,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"name\": \"[parameters('webAppName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 43,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"siteConfig\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 44,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"appSettings\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 45,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 46,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"name\": \"APPINSIGHTS_INSTRUMENTATIONKEY\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 47,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsight')), '2020-02-02').InstrumentationKey]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 48,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 49,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 94,
+              "Provider": "Azure",
+              "Service": "appservice",
+              "StartLine": 42
+            },
+            "Description": "The TLS mutual authentication technique in enterprise environments ensures the authenticity of clients to the server. If incoming client certificates are enabled only an authenticated client with valid certificates can access the app.",
+            "ID": "AVD-AZU-0001",
+            "Layer": {},
+            "Message": "App service does not have client certificates enabled.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0001",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0001"
+            ],
+            "Resolution": "Enable incoming certificates for clients",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Web App accepts incoming client certificate",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0002",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 42,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"name\": \"[parameters('webAppName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 43,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"siteConfig\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 44,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"appSettings\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 45,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 46,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"name\": \"APPINSIGHTS_INSTRUMENTATIONKEY\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 47,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsight')), '2020-02-02').InstrumentationKey]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 48,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 49,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 94,
+              "Provider": "Azure",
+              "Service": "appservice",
+              "StartLine": 42
+            },
+            "Description": "Registering the identity used by an App with AD allows it to interact with other services without using username and password",
+            "ID": "AVD-AZU-0002",
+            "Layer": {},
+            "Message": "App service does not have an identity type.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0002",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0002"
+            ],
+            "Resolution": "Register the app identity with AD",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Web App has registration with AD enabled",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0003",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 42,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"name\": \"[parameters('webAppName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 43,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"siteConfig\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 44,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"appSettings\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 45,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 46,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"name\": \"APPINSIGHTS_INSTRUMENTATIONKEY\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 47,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsight')), '2020-02-02').InstrumentationKey]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 48,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 49,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 94,
+              "Provider": "Azure",
+              "Service": "appservice",
+              "StartLine": 42
+            },
+            "Description": "Enabling authentication ensures that all communications in the application are authenticated. The auth_settings block needs to be filled out with the appropriate auth backend settings",
+            "ID": "AVD-AZU-0003",
+            "Layer": {},
+            "Message": "App service does not have authentication enabled.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0003",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0003"
+            ],
+            "Resolution": "Enable authentication to prevent anonymous request being accepted",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "App Service authentication is activated",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0004",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 42,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"name\": \"[parameters('webAppName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 43,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"siteConfig\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 44,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"appSettings\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 45,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 46,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"name\": \"APPINSIGHTS_INSTRUMENTATIONKEY\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 47,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsight')), '2020-02-02').InstrumentationKey]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 48,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 49,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 94,
+              "Provider": "Azure",
+              "Service": "appservice",
+              "StartLine": 42
+            },
+            "Description": "By default, clients can connect to function endpoints by using both HTTP or HTTPS. You should redirect HTTP to HTTPs because HTTPS uses the SSL/TLS protocol to provide a secure connection, which is both encrypted and authenticated.",
+            "ID": "AVD-AZU-0004",
+            "Layer": {},
+            "Message": "Function app does not have HTTPS enforced.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0004",
+            "Query": "data..",
+            "References": [
+              "https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-bindings#enforce-https",
+              "https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts",
+              "https://avd.aquasec.com/misconfig/avd-azu-0004"
+            ],
+            "Resolution": "You can redirect all HTTP requests to the HTTPS port.",
+            "Severity": "CRITICAL",
+            "Status": "FAIL",
+            "Title": "Ensure the Function App can only be accessed via HTTPS. The default is false.",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0005",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 42,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"name\": \"[parameters('webAppName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 43,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"siteConfig\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 44,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"appSettings\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 45,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 46,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"name\": \"APPINSIGHTS_INSTRUMENTATIONKEY\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 47,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsight')), '2020-02-02').InstrumentationKey]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 48,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 49,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 94,
+              "Provider": "Azure",
+              "Service": "appservice",
+              "StartLine": 42
+            },
+            "Description": "Use the latest version of HTTP to ensure you are benefiting from security fixes",
+            "ID": "AVD-AZU-0005",
+            "Layer": {},
+            "Message": "App service does not have HTTP/2 enabled.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0005",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0005"
+            ],
+            "Resolution": "Use the latest version of HTTP",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "Web App uses the latest HTTP version",
+            "Type": "Azure ARM Security Check"
+          },
+          {
+            "AVDID": "AVD-AZU-0006",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "{",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 1,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 2,
+                    "Truncated": true
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            \"properties\": {",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 42,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"name\": \"[parameters('webAppName')]\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 43,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                \"siteConfig\": {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 44,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                    \"appSettings\": [",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 45,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                        {",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 46,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"name\": \"APPINSIGHTS_INSTRUMENTATIONKEY\",",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 47,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "                            \"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsight')), '2020-02-02').InstrumentationKey]\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 48,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 49,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 94,
+              "Provider": "Azure",
+              "Service": "appservice",
+              "StartLine": 42
+            },
+            "Description": "Use a more recent TLS/SSL policy for the App Service",
+            "ID": "AVD-AZU-0006",
+            "Layer": {},
+            "Message": "App service does not require a secure TLS version.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-azu-0006",
+            "Query": "data..",
+            "References": [
+              "https://avd.aquasec.com/misconfig/avd-azu-0006"
+            ],
+            "Resolution": "The TLS version being outdated and has known vulnerabilities",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Web App uses latest TLS version",
+            "Type": "Azure ARM Security Check"
+          }
+        ],
+        "Target": "webapp-windows-aspnet/azuredeploy.json",
+        "Type": "azure-arm"
+      },
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 0,
+          "Successes": 2
+        },
+        "Target": "webapp-windows-aspnet/azuredeploy.parameters.json",
+        "Type": "azure-arm"
+      }
+    ],
+    "SchemaVersion": 2
+  },
+  "policy-results": [
+    {
+      "filename": "root",
+      "namespace": "main",
+      "successes": 0,
+      "failures": [
+        {
+          "msg": "config.rego failed - Found CRITICAL issues in infrastructure as code: KeyVault/Keyvault.azuredeploy.json: Key vault should have the network acl block specified"
+        },
+        {
+          "msg": "config.rego failed - Found CRITICAL issues in infrastructure as code: SQL/SQL-Server/sql.azuredeploy.json: The minimum TLS version for Storage Accounts should be TLS1_2"
+        },
+        {
+          "msg": "config.rego failed - Found CRITICAL issues in infrastructure as code: ad-application-workloads/azuredeploy.json: The minimum TLS version for Storage Accounts should be TLS1_2"
+        },
+        {
+          "msg": "config.rego failed - Found CRITICAL issues in infrastructure as code: networkwatcher/nw.azuredeploy.json: The minimum TLS version for Storage Accounts should be TLS1_2"
+        },
+        {
+          "msg": "config.rego failed - Found CRITICAL issues in infrastructure as code: storage/StorageB/deploy.json: The minimum TLS version for Storage Accounts should be TLS1_2"
+        },
+        {
+          "msg": "config.rego failed - Found CRITICAL issues in infrastructure as code: webapp-windows-aspnet/azuredeploy.json: Ensure the Function App can only be accessed via HTTPS. The default is false."
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: SQL/SQL-Server/sql.azuredeploy.json: Storage accounts should be configured to only accept transfers that are over secure connections"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: ad-application-workloads/azuredeploy.json: Storage accounts should be configured to only accept transfers that are over secure connections"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: disks/azuredeploy.json: Enable disk encryption on managed disk"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: networkwatcher/nw.azuredeploy.json: Storage accounts should be configured to only accept transfers that are over secure connections"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: storage/StorageB/deploy.json: Storage accounts should be configured to only accept transfers that are over secure connections"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: webapp-windows-aspnet/azuredeploy.json: Web App uses latest TLS version"
+        }
+      ]
+    }
+  ],
+  "policy-passed": false
+}

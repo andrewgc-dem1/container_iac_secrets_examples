@@ -1,0 +1,83 @@
+No vulnerabilities found
+
+Misconfigurations
+TITLE                                                                           	PROVIDER	ID          	SEVERITY 
+Key vault should have the network acl block specified                           	Azure   	AVD-AZU-0013	CRITICAL	
+Ensure that the expiration date is set on all keys                              	Azure   	AVD-AZU-0014	MEDIUM  	
+Key vault Secret should have a content type set                                 	Azure   	AVD-AZU-0015	LOW     	
+Key vault should have purge protection enabled                                  	Azure   	AVD-AZU-0016	MEDIUM  	
+Key Vault Secret should have an expiration date set                             	Azure   	AVD-AZU-0017	LOW     	
+Storage accounts should be configured to only accept transfers that are over    	Azure   	AVD-AZU-0008	HIGH    	
+secure connections                                                              	        	            	        	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure   	AVD-AZU-0011	CRITICAL	
+At least one email address is set for threat alerts                             	Azure   	AVD-AZU-0018	MEDIUM  	
+Security threat alerts go to subcription owners and co-administrators           	Azure   	AVD-AZU-0023	LOW     	
+Databases should have the minimum TLS set for connections                       	Azure   	AVD-AZU-0026	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure   	AVD-AZU-0027	MEDIUM  	
+No threat detections are set                                                    	Azure   	AVD-AZU-0028	MEDIUM  	
+Databases should have the minimum TLS set for connections                       	Azure   	AVD-AZU-0026	MEDIUM  	
+Auditing should be enabled on Azure SQL Databases                               	Azure   	AVD-AZU-0027	MEDIUM  	
+Storage accounts should be configured to only accept transfers that are over    	Azure   	AVD-AZU-0008	HIGH    	
+secure connections                                                              	        	            	        	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure   	AVD-AZU-0011	CRITICAL	
+Enable disk encryption on managed disk                                          	Azure   	AVD-AZU-0038	HIGH    	
+Storage accounts should be configured to only accept transfers that are over    	Azure   	AVD-AZU-0008	HIGH    	
+secure connections                                                              	        	            	        	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure   	AVD-AZU-0011	CRITICAL	
+Retention policy for flow logs should be enabled and set to greater than 90 days	Azure   	AVD-AZU-0049	LOW     	
+Storage accounts should be configured to only accept transfers that are over    	Azure   	AVD-AZU-0008	HIGH    	
+secure connections                                                              	        	            	        	
+Storage accounts should be configured to only accept transfers that are over    	Azure   	AVD-AZU-0008	HIGH    	
+secure connections                                                              	        	            	        	
+Storage accounts should be configured to only accept transfers that are over    	Azure   	AVD-AZU-0008	HIGH    	
+secure connections                                                              	        	            	        	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure   	AVD-AZU-0011	CRITICAL	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure   	AVD-AZU-0011	CRITICAL	
+The minimum TLS version for Storage Accounts should be TLS1_2                   	Azure   	AVD-AZU-0011	CRITICAL	
+Web App accepts incoming client certificate                                     	Azure   	AVD-AZU-0001	LOW     	
+Web App has registration with AD enabled                                        	Azure   	AVD-AZU-0002	LOW     	
+App Service authentication is activated                                         	Azure   	AVD-AZU-0003	MEDIUM  	
+Ensure the Function App can only be accessed via HTTPS. The default is false.   	Azure   	AVD-AZU-0004	CRITICAL	
+Web App uses the latest HTTP version                                            	Azure   	AVD-AZU-0005	LOW     	
+Web App uses latest TLS version                                                 	Azure   	AVD-AZU-0006	HIGH    	
+
+
+No secrets found
+
+Policy Results
+TYPE  	MESSAGE                                                                          
+Config	Found CRITICAL issues in infrastructure as code:                                	
+      	KeyVault/Keyvault.azuredeploy.json: Key vault should have the network acl block 	
+      	specified                                                                       	
+Config	Found CRITICAL issues in infrastructure as code:                                	
+      	SQL/SQL-Server/sql.azuredeploy.json: The minimum TLS version for Storage        	
+      	Accounts should be TLS1_2                                                       	
+Config	Found CRITICAL issues in infrastructure as code:                                	
+      	ad-application-workloads/azuredeploy.json: The minimum TLS version for Storage  	
+      	Accounts should be TLS1_2                                                       	
+Config	Found CRITICAL issues in infrastructure as code:                                	
+      	networkwatcher/nw.azuredeploy.json: The minimum TLS version for Storage Accounts	
+      	should be TLS1_2                                                                	
+Config	Found CRITICAL issues in infrastructure as code: storage/StorageB/deploy.json:  	
+      	The minimum TLS version for Storage Accounts should be TLS1_2                   	
+Config	Found CRITICAL issues in infrastructure as code:                                	
+      	webapp-windows-aspnet/azuredeploy.json: Ensure the Function App can only be     	
+      	accessed via HTTPS. The default is false.                                       	
+Config	Found HIGH issues in infrastructure as code:                                    	
+      	SQL/SQL-Server/sql.azuredeploy.json: Storage accounts should be configured to   	
+      	only accept transfers that are over secure connections                          	
+Config	Found HIGH issues in infrastructure as code:                                    	
+      	ad-application-workloads/azuredeploy.json: Storage accounts should be configured	
+      	to only accept transfers that are over secure connections                       	
+Config	Found HIGH issues in infrastructure as code: disks/azuredeploy.json: Enable disk	
+      	encryption on managed disk                                                      	
+Config	Found HIGH issues in infrastructure as code: networkwatcher/nw.azuredeploy.json:	
+      	Storage accounts should be configured to only accept transfers that are over    	
+      	secure connections                                                              	
+Config	Found HIGH issues in infrastructure as code: storage/StorageB/deploy.json:      	
+      	Storage accounts should be configured to only accept transfers that are over    	
+      	secure connections                                                              	
+Config	Found HIGH issues in infrastructure as code:                                    	
+      	webapp-windows-aspnet/azuredeploy.json: Web App uses latest TLS version         	
+
+Policy Passed = false

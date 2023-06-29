@@ -1,0 +1,185 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "keyVaultName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the KeyVault"
+              }
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "Location of the Keyvault Deploy"
+              }
+        },
+        "sku": {
+            "type": "string",
+            "metadata": {
+                "description": "Mentioned the SKU of the azure Keyvault"
+              }
+        },
+        "accessPolicies": {
+            "type": "array"
+        },
+        "tenant": {
+            "type": "string"
+        },
+        "enabledForDeployment": {
+            "type": "bool",
+            "metadata": {
+                "description": "Enable for Azure Virtual Machines for deployment"
+              }
+        },
+        "enabledForTemplateDeployment": {
+            "type": "bool",
+            "metadata": {
+                "description": "Enable Azure Resource Manager for template deployment"
+              }
+        },
+        "enabledForDiskEncryption": {
+            "type": "bool",
+            "metadata": {
+                "description": "Enable for Azure Disk Encryption for volume encryption"
+              }
+        },
+        "enableRbacAuthorization": {
+            "type": "bool",
+            "metadata": {
+                "description": "Enable RBAC authntication for the keyvault access"
+              }
+        },
+        "enableSoftDelete": {
+            "type": "bool"
+        },
+        "softDeleteRetentionInDays": {
+            "type": "int"
+        },
+        "networkAcls": {
+            "type": "object"
+        },
+        "secretName":{
+            "type": "securestring",
+            "metadata": {
+                "description": "Value for the Secrets to be store"
+              }
+        },
+        "secretValue":{
+            "type": "securestring",
+            "metadata": {
+                "description": "Value for the Secrets to be store"
+              }
+        },
+        "keyName":{
+            "type": "securestring",
+            "metadata": {
+                "description": "Value for the Key to be store"
+              }
+        },
+        "keyEnabled":{
+            "type": "bool"
+        },
+        "keyExp":{
+            "type": "int"
+        },
+        "keynbf":{
+            "type": "int"
+        },
+        "keyExpiryTime":{
+            "type": "string"
+        },
+        "keySize":{
+            "type": "int"
+        }
+    },
+    "variables": {
+        "uniqueString": "[uniqueString(subscription().id, resourceGroup().id)]",
+        "diagnosticStorageAccountName": "[toLower( substring( replace( concat( parameters('keyVaultName'), variables('uniqueString'), variables('uniqueString') ), '-', ''), 0, 23) )]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-02-14",
+            "name": "[parameters('keyVaultName')]",
+            "location": "[resourceGroup().location]",
+            "type": "Microsoft.KeyVault/vaults",
+            "properties": {
+                "enabledForDeployment": "[parameters('enabledForDeployment')]",
+                "enabledForTemplateDeployment": "[parameters('enabledForTemplateDeployment')]",
+                "enabledForDiskEncryption": "[parameters('enabledForDiskEncryption')]",
+                "enableRbacAuthorization": "[parameters('enableRbacAuthorization')]",
+                "accessPolicies": "[parameters('accessPolicies')]",
+                "tenantId": "[parameters('tenant')]",
+                "sku": {
+                    "name": "[parameters('sku')]",
+                    "family": "A"
+                },
+                "enableSoftDelete": "[parameters('enableSoftDelete')]",
+                "softDeleteRetentionInDays": "[parameters('softDeleteRetentionInDays')]",
+                "networkAcls": "[parameters('networkAcls')]"
+            },
+            "tags": {},
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/secrets",
+            "apiVersion": "2019-09-01",
+            "name": "[concat(parameters('keyVaultName'), '/', parameters('secretName'))]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+              "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
+            ],
+            "properties": {
+              "attributes": {
+                "value": "[parameters('secretValue')]",
+                "enabled": "[parameters('keyEnabled')]",
+                "exp": "[parameters('keyExp')]"
+               }
+            }
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults/keys",
+            "apiVersion": "2021-06-01-preview",
+            "name": "[concat(parameters('keyVaultName'), '/', parameters('keyName'))]",
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
+            ],
+            "properties": {
+              "attributes": {
+                "enabled": "[parameters('keyEnabled')]",
+                "exp": "[parameters('keyExp')]",
+                "nbf": "[parameters('keynbf')]"
+              },
+              "keySize": "[parameters('keySize')]",
+              "rotationPolicy": {
+                "attributes": {
+                  "expiryTime": "[parameters('keyExpiryTime')]"
+                }
+              }
+            }
+        },
+        {
+            "type" : "Microsoft.KeyVault/vaults/providers/diagnosticsettings",
+            "name": "LogSettings",
+            "scope": "",
+            "apiVersion": "2021-05-01-preview",
+            "properties": {
+              "workspaceId": "",
+              "storageAccountId": "",
+              "logs": [
+                  {
+                      "category": "Auditevent",
+                      "enabled": false
+                  }
+              ],
+              "metrics": [
+                  {
+                      "category": "Transaction",
+                      "enabled": true
+                  }
+              ]
+            }
+        }
+    ],
+    "outputs": {}
+}

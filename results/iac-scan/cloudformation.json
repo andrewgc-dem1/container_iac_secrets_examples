@@ -1,0 +1,1054 @@
+{
+  "vulnerabilities": {
+    "descriptor": {
+      "configuration": "",
+      "db": {
+        "built": "2023-06-29T01:34:06Z",
+        "checksum": "sha256:a70a066cbe03743a09df8245fb7613133efb233e1bc3d8aae9f9b4cb6078a70a",
+        "error": null,
+        "location": "/var/folders/2v/z_0jd7gn30qcym54rz_z2__m0000gq/T/veracode_cli_cache/5",
+        "schemaVersion": 5
+      },
+      "name": "grype",
+      "version": "[not provided]"
+    },
+    "distro": {
+      "idLike": null,
+      "name": "",
+      "version": ""
+    },
+    "matches": [],
+    "source": {
+      "target": "./insecure-test/iac/cloudformation",
+      "type": "directory"
+    }
+  },
+  "secrets": {
+    "ArtifactName": "insecure-test/iac/cloudformation",
+    "ArtifactType": "filesystem",
+    "Metadata": {
+      "ImageConfig": {
+        "architecture": "",
+        "config": {},
+        "created": "0001-01-01T00:00:00Z",
+        "os": "",
+        "rootfs": {
+          "diff_ids": null,
+          "type": ""
+        }
+      }
+    },
+    "SchemaVersion": 2
+  },
+  "configs": {
+    "ArtifactName": "insecure-test/iac/cloudformation",
+    "ArtifactType": "filesystem",
+    "Metadata": {
+      "ImageConfig": {
+        "architecture": "",
+        "config": {},
+        "created": "0001-01-01T00:00:00Z",
+        "os": "",
+        "rootfs": {
+          "diff_ids": null,
+          "type": ""
+        }
+      }
+    },
+    "Results": [
+      {
+        "Class": "config",
+        "MisconfSummary": {
+          "Exceptions": 0,
+          "Failures": 8,
+          "Successes": 4
+        },
+        "Misconfigurations": [
+          {
+            "AVDID": "AVD-AWS-0086",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "\nS3 buckets should block public ACLs on buckets and any objects they contain. By blocking, PUTs with fail if the object has any public ACL a.\n",
+            "ID": "AVD-AWS-0086",
+            "Layer": {},
+            "Message": "No public access block so not blocking public acls",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0086",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0086"
+            ],
+            "Resolution": "Enable blocking any PUT calls with a public ACL specified",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "S3 Access block should block public ACL",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0087",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "\nS3 bucket policy should have block public policy to prevent users from putting a policy that enable public access.\n",
+            "ID": "AVD-AWS-0087",
+            "Layer": {},
+            "Message": "No public access block so not blocking public policies",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0087",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/dev-retired/access-control-block-public-access.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0087"
+            ],
+            "Resolution": "Prevent policies that allow public access being PUT",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "S3 Access block should block public policy",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0088",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "S3 Buckets should be encrypted to protect the data that is stored within them if access is compromised.",
+            "ID": "AVD-AWS-0088",
+            "Layer": {},
+            "Message": "Bucket does not have encryption enabled",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0088",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0088"
+            ],
+            "Resolution": "Configure bucket encryption",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "Unencrypted S3 bucket.",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0089",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "Buckets should have logging enabled so that access can be audited.",
+            "ID": "AVD-AWS-0089",
+            "Layer": {},
+            "Message": "Bucket does not have logging enabled",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0089",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0089"
+            ],
+            "Resolution": "Add a logging block to the resource to enable access logging",
+            "Severity": "MEDIUM",
+            "Status": "FAIL",
+            "Title": "S3 Bucket does not have logging enabled.",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0091",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "\nS3 buckets should ignore public ACLs on buckets and any objects they contain. By ignoring rather than blocking, PUT calls with public ACLs will still be applied but the ACL will be ignored.\n",
+            "ID": "AVD-AWS-0091",
+            "Layer": {},
+            "Message": "No public access block so not ignoring public acls",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0091",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0091"
+            ],
+            "Resolution": "Enable ignoring the application of public ACLs in PUT calls",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "S3 Access Block should Ignore Public Acl",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0093",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "S3 buckets should restrict public policies for the bucket. By enabling, the restrict_public_buckets, only the bucket owner and AWS Services can access if it has a public policy.",
+            "ID": "AVD-AWS-0093",
+            "Layer": {},
+            "Message": "No public access block so not restricting public buckets",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0093",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/dev-retired/access-control-block-public-access.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0093"
+            ],
+            "Resolution": "Limit the access to public buckets to only the owner or AWS Services (eg; CloudFront)",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "S3 Access block should restrict public bucket to limit access",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0094",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "The \"block public access\" settings in S3 override individual policies that apply to a given bucket, meaning that all public access can be controlled in one central types for that bucket. It is therefore good practice to define these settings for each bucket in order to clearly define the public access that can be allowed for it.",
+            "ID": "AVD-AWS-0094",
+            "Layer": {},
+            "Message": "Bucket does not have a corresponding public access block.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0094",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0094"
+            ],
+            "Resolution": "Define a aws_s3_bucket_public_access_block for the given bucket to control public access policies",
+            "Severity": "LOW",
+            "Status": "FAIL",
+            "Title": "S3 buckets should each define an aws_s3_bucket_public_access_block",
+            "Type": "CloudFormation Security Check"
+          },
+          {
+            "AVDID": "AVD-AWS-0132",
+            "CauseMetadata": {
+              "Code": {
+                "Lines": [
+                  {
+                    "Annotation": "",
+                    "Content": "  mybucketVulnerable:",
+                    "FirstCause": true,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 4,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Type: \"AWS::S3::Bucket\"",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 5,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    DeletionPolicy: Retain",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 6,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "    Properties:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 7,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "      ReplicationConfiguration:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 8,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "        Role:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 9,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "          Fn::GetAtt:",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 10,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - WorkItemBucketBackupRole",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": false,
+                    "Number": 11,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "            - Arn",
+                    "FirstCause": false,
+                    "IsCause": true,
+                    "LastCause": true,
+                    "Number": 12,
+                    "Truncated": false
+                  },
+                  {
+                    "Annotation": "",
+                    "Content": "",
+                    "FirstCause": false,
+                    "IsCause": false,
+                    "LastCause": false,
+                    "Number": 13,
+                    "Truncated": true
+                  }
+                ]
+              },
+              "EndLine": 29,
+              "Provider": "AWS",
+              "Resource": "insecure-example.yml:4-29",
+              "Service": "s3",
+              "StartLine": 4
+            },
+            "Description": "Encryption using AWS keys provides protection for your S3 buckets. To increase control of the encryption and manage factors like rotation use customer managed keys.",
+            "ID": "AVD-AWS-0132",
+            "Layer": {},
+            "Message": "Bucket does not encrypt data with a customer managed key.",
+            "PrimaryURL": "https://avd.aquasec.com/misconfig/avd-aws-0132",
+            "Query": "data..",
+            "References": [
+              "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html",
+              "https://avd.aquasec.com/misconfig/avd-aws-0132"
+            ],
+            "Resolution": "Enable encryption using customer managed keys",
+            "Severity": "HIGH",
+            "Status": "FAIL",
+            "Title": "S3 encryption should use Customer Managed Keys",
+            "Type": "CloudFormation Security Check"
+          }
+        ],
+        "Target": "insecure-example.yml",
+        "Type": "cloudformation"
+      }
+    ],
+    "SchemaVersion": 2
+  },
+  "policy-results": [
+    {
+      "filename": "root",
+      "namespace": "main",
+      "successes": 0,
+      "failures": [
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access Block should Ignore Public Acl"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access block should block public ACL"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access block should block public policy"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: insecure-example.yml: S3 Access block should restrict public bucket to limit access"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: insecure-example.yml: S3 encryption should use Customer Managed Keys"
+        },
+        {
+          "msg": "config.rego failed - Found HIGH issues in infrastructure as code: insecure-example.yml: Unencrypted S3 bucket."
+        }
+      ]
+    }
+  ],
+  "policy-passed": false
+}
