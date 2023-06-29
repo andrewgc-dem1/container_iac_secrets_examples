@@ -1,0 +1,26 @@
+name: Scan Workflow
+
+
+
+
+
+
+on:
+  repository-dispatch:
+  
+jobs:
+  checkout-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+  create-sbom:
+    steps:
+      - name: Create SBOM
+        run: |
+            export VERACODE_API_KEY_ID=$(VERACODE_API_KEY_ID)
+            export VERACODE_API_KEY_SECRET=$(VERACODE_API_KEY_SECRET)
+            curl -fsS https://tools.veracode.com/veracode-cli/install | sh
+            ./veracode configure
+            ./veracode sbom --source https://github.com/veracode/verademo --type repo --format json --output ./sbom.json
+          
