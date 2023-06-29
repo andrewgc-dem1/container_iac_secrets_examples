@@ -1,0 +1,59 @@
+name: Scan Workflow
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  sbon_creation:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create SBOM
+        run: |
+            export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_KEY_ID }}
+            export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY_SECRET }}
+            curl -fsS https://tools.veracode.com/veracode-cli/install | sh
+            ./veracode configure
+            ./veracode sbom --source https://github.com/veracode/verademo --type repo --format json --output ./sbom.json
+
+      - name: store Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: SBOM
+          path: ./sbom.json
+
+  scan_and_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Scan
+        run: |
+            export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_KEY_ID }}
+            export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY_SECRET }}
+            curl -fsS https://tools.veracode.com/veracode-cli/install | sh
+            ./veracode configure
+            ./veracode scan --source https://github.com/veracode/verademo --type repo --format json --output ./veracode_directory_scan.json
+
+      - name: store Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Scan-Results
+          path: ./veracode_directory_scan.json
+
+      - name: Verify policy
+        run: |
+            PASS=$(cat veracode_directory_scan.json | jq -r '."policy-passed"' )
+            #PASS='passed'
+            echo "Passed policy: $PASS"
+            if [ $PASS == 'false' ]
+            then
+              exit 1
+            else
+              exit 0
+            fi
+
+          
