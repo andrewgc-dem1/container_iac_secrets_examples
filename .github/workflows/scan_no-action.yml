@@ -1,4 +1,4 @@
-name: Scan Workflow
+name: Scan Workflow without action
 
 on:
   workflow_dispatch:
