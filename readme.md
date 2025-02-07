@@ -1,4 +1,4 @@
-Scan Image 2-7-25
+Scan Image 2-7-25 9.35
 - veracode scan --source  juliantotzek/verademo1-tomcat --type image --output scan-verademo.json --format json 
 - veracode scan --source  juliantotzek/verademo1-tomcat --type image --output scan-verademo-table.txt --format table 
 
